@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam Timetable Conflict Resolver</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>📅 Exam Timetable Conflict Resolver</h1>
+    <p>Graph Coloring Algorithm | ADSA Mini Project</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Add Subjects</h2>
+      <input id="subjectName" placeholder="Enter subject name">
+      <button onclick="addSubject()">+ Add Subject</button>
+
+      <h2>Define Conflicts</h2>
+      <p>Select two subjects that cannot have exams at the same time.</p>
+      <select id="subject1"></select>
+      <select id="subject2"></select>
+      <button onclick="addConflict()">+ Add Conflict</button>
+
+      <div class="actions">
+        <button class="sample" onclick="loadSample()">Load Sample Data</button>
+        <button class="reset" onclick="resetAll()">Reset</button>
+        <button onclick="generateTimetable()">Generate Timetable</button>
+      </div>
+      <p id="message">Add subjects and define conflicts.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Conflict Graph</h2>
+      <div id="graph" class="graph"></div>
+      <p class="legend">
+        Each node is a subject. Each line is a conflict.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>Generated Timetable</h2>
+      <p id="slotCount">Time slots used: 0</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Time Slot</th>
+            <th>Color</th>
+          </tr>
+        </thead>
+        <tbody id="results"></tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <h2>Conflict List</h2>
+      <ul id="conflictList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    Advanced Data Structures and Algorithms |
+    Graph Coloring
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
